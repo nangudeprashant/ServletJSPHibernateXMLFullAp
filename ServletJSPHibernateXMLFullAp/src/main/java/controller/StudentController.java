@@ -19,7 +19,6 @@ import model.Student;
 /**
  * Servlet implementation class StudentController
  */
-//@WebServlet(name = "StudentServlet", urlPatterns = { "/studentInfo" }, loadOnStartup = 1)
 public class StudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -133,6 +132,18 @@ public class StudentController extends HttpServlet {
 				rd.forward(request, response);
 				e.printStackTrace();
 			} catch (HibernateException e) {
+				request.setAttribute("errorMessage",
+						"Opps!!!Error in data Deletion.\n" + "Here are the details:\n" + e.getMessage());
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Error.jsp");
+				rd.forward(request, response);
+			}
+			catch (NullPointerException e) {
+				request.setAttribute("errorMessage",
+						"Opps!!!Error in data Deletion.\n" + "Here are the details:\n" + e.getMessage());
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Error.jsp");
+				rd.forward(request, response);
+			}
+			catch (IllegalArgumentException e) {
 				request.setAttribute("errorMessage",
 						"Opps!!!Error in data Deletion.\n" + "Here are the details:\n" + e.getMessage());
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Error.jsp");
