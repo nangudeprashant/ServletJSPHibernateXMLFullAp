@@ -16,7 +16,7 @@ import org.slf4j.MDC;
 /**
  * Servlet Filter implementation class PerformanceFilter
  */
-@WebFilter("/studentInfo")
+//@WebFilter("/studentInfo")
 public class PerformanceFilter implements Filter {
 	private static final Logger logger = LoggerFactory.getLogger(PerformanceFilter.class); // SLF4J
 

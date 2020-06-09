@@ -13,7 +13,7 @@ import org.apache.log4j.PropertyConfigurator;
  * Application Lifecycle Listener implementation class ContextListener
  *
  */
-@WebListener("application context listener")
+//@WebListener("application context listener")
 public class ContextListener implements ServletContextListener {
 
     /**
@@ -40,6 +40,7 @@ public class ContextListener implements ServletContextListener {
         String fullPath = context.getRealPath("") + File.separator + log4jConfigFile;
          
         PropertyConfigurator.configure(fullPath);
+    	System.out.println("Context initialized........");
     }
 	
 }
