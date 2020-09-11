@@ -14,7 +14,6 @@ import org.hibernate.Transaction;
 
 import databaseUtil.HibernateUtil;
 
-import databaseUtil.MySQLUtil;
 import model.Student;
 
 public class StudentUtil {
